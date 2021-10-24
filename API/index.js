@@ -3,7 +3,10 @@ const app = express()
 const cors = require('cors')
 const consign = require('consign')
 const Sequelize = require('sequelize');
-const sequelize = new Sequelize('sqlite::memory:');
+const sequelize = new Sequelize('database', 'username', 'password', {
+    dialect: 'sqlite',
+    storage: 'C:/Users/rafae/Desktop/ADS/Projeto Integrador/BD/database.sqlite'
+})
 
 sequelize.sync({ force: true });
 
