@@ -13,6 +13,10 @@ module.exports = function (app) {
             type: DataTypes.STRING,
             allowNull: false
         },
+        idUser: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        }
     }, {
         timestamps: false,
     });
