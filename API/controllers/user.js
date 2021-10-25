@@ -26,7 +26,7 @@ module.exports = function (app) {
     res.json(user);
   });
 
-  app.put("/user/:id", async function (req, res) {
+  app.put("/user/:id", auth, async function (req, res) {
     const crypto = require("crypto");
     const id = parseInt(req.params.id);
     const user = await UserModel.findByPk(id);
@@ -48,7 +48,7 @@ module.exports = function (app) {
     res.json(user);
   });
 
-  app.delete("/user/:id", async function (req, res) {
+  app.delete("/user/:id", auth, async function (req, res) {
     const id = parseInt(req.params.id);
     const user = await UserModel.findByPk(id);
     await user.destroy();
