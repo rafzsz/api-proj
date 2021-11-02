@@ -54,22 +54,4 @@ module.exports = function (app) {
     await adm.destroy();
     res.json({ status: "success" });
   });
-
-  app.post("/login", async function (req, res) {
-    const user = await AdmModel.findOne({
-      where: { mail: req.body.mail },
-    });
-    const hash = crypto
-      .createHash("sha256")
-      .update(req.body.password)
-      .digest("hex");
-    if (user.password === hash) {
-      const token = jwt.sign({ id: adm.id }, "segredo");
-      res.json({ status: "success", token });
-      res.status(200);
-    } else {
-      res.json({ status: "Não autenticado" });
-      res.status(401);
-    }
-  });
 };

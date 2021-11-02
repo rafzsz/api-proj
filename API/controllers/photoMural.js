@@ -29,7 +29,7 @@ module.exports = function (app) {
     res.json(photo);
   });
 
-  app.delete("/lostPet/:id", auth, async function (req, res) {
+  app.delete("/photoMural/:id", auth, async function (req, res) {
     const id = parseInt(req.params.id);
     const photo = await PhotoMural.findByPk(id);
     await photo.destroy();
