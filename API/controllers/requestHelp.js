@@ -23,6 +23,7 @@ module.exports = function (app) {
     const id = parseInt(req.params.id);
     const request = await RequestModel.findByPk(id);
     request.user = req.body.user;
+    request.title = req.body.title;
     request.description = req.body.description;
     request.approved = req.body.approved;
     await request.save();

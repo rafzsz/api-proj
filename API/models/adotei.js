@@ -2,8 +2,8 @@ module.exports = function (app) {
   const { Sequelize, DataTypes } = require("sequelize");
   const sequelize = app.get("sequelize");
 
-  const Lost = sequelize.define(
-    "Lost",
+  const Adotei = sequelize.define(
+    "Adotei",
     {
       id: {
         type: DataTypes.INTEGER,
@@ -15,28 +15,12 @@ module.exports = function (app) {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      type: {
+      URL: {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      date: {
-        type: DataTypes.DATE,
-        allowNull: false,
-      },
-      breed: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
-      description: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
-      lastSee: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
-      image: {
-        type: DataTypes.STRING,
+      idUser: {
+        type: DataTypes.INTEGER,
         allowNull: false,
       },
     },
@@ -44,5 +28,5 @@ module.exports = function (app) {
       timestamps: false,
     }
   );
-  return Lost;
+  return Adotei;
 };

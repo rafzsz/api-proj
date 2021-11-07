@@ -28,6 +28,7 @@ module.exports = function (app) {
     lost.breed = req.body.breed;
     lost.description = req.body.description;
     lost.lastSee = req.body.lastSee;
+    lost.image = req.body.image;
     await lost.save();
     res.json(lost);
   });

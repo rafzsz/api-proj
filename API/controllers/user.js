@@ -44,6 +44,7 @@ module.exports = function (app) {
     user.phone = req.body.phone;
     user.birthDate = req.body.birthDate;
     user.cpf = req.body.cpf;
+    user.image = req.body.image;
     await user.save();
     res.json(user);
   });
