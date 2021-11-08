@@ -29,7 +29,7 @@ module.exports = function (app) {
     res.json(partner);
   });
 
-  app.delete("/lostPet/:id", auth, async function (req, res) {
+  app.delete("/ongPet/:id", auth, async function (req, res) {
     const id = parseInt(req.params.id);
     const partner = await Partner.findByPk(id);
     await partner.destroy();

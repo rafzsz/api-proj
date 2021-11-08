@@ -37,7 +37,7 @@ module.exports = function (app) {
       },
       image: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
       },
     },
     {

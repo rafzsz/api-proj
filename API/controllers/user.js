@@ -5,15 +5,15 @@ const auth = require("../middlewares/authMiddleware");
 module.exports = function (app) {
   const UserModel = app.models.user;
 
+  app.get("/users", auth, async function (req, res) {
+    const users = await UserModel.findAll();
+    res.json(users);
+  });
+
   app.get("/user/:id?", auth, async function (req, res) {
     const id = parseInt(req.params.id) || false;
-    if (!id) {
-      const users = await UserModel.findAll();
-      res.json(users);
-    } else {
-      const user = await UserModel.findByPk(id);
-      res.json(user);
-    }
+    const user = await UserModel.findByPk(id || res.locals.user);
+    res.json(user);
   });
 
   app.post("/user", async function (req, res) {
