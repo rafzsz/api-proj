@@ -8,7 +8,7 @@ const sequelize = new Sequelize("database", "username", "password", {
   storage: "C:/Users/rafae/Desktop/ADS/Projeto Integrador/BD/database.sqlite",
 });
 
-sequelize.sync({ force: true });
+sequelize.sync({ force: false });
 
 app.use(cors());
 app.use(express.json());

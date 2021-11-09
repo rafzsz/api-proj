@@ -23,8 +23,7 @@ module.exports = function (app) {
     const id = parseInt(req.params.id);
     const partner = await PartnerModel.findByPk(id);
     partner.name = req.body.name;
-    partner.location = req.body.location;
-    partner.information = req.body.information;
+    partner.CNPJ = req.body.CNPJ;
     await partner.save();
     res.json(partner);
   });
