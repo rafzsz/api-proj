@@ -8,7 +8,7 @@ const sequelize = new Sequelize("database", "postgres", "password", {
   dialect: "postgres",
 });
 
-sequelize.sync({ force: true });
+sequelize.sync({ force: false });
 
 app.use(cors());
 app.set("sequelize", sequelize);

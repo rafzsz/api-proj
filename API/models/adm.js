@@ -45,12 +45,16 @@ module.exports = function (app) {
         allowNull: false,
       },
       birthDate: {
-        type: DataTypes.DATEONLY,
+        type: DataTypes.STRING,
         allowNull: false,
       },
       cpf: {
         type: DataTypes.INTEGER,
         allowNull: false,
+      },
+      image: {
+        type: DataTypes.TEXT,
+        allowNull: true,
       },
     },
     {
