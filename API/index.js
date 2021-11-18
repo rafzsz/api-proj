@@ -1,18 +1,20 @@
+const bodyParser = require("body-parser");
 const express = require("express");
 const app = express();
 const cors = require("cors");
 const consign = require("consign");
 const Sequelize = require("sequelize");
-const sequelize = new Sequelize("database", "username", "password", {
-  dialect: "sqlite",
-  storage: "C:/Users/rafae/Desktop/ADS/Projeto Integrador/BD/database.sqlite",
+const sequelize = new Sequelize("database", "postgres", "password", {
+  dialect: "postgres",
 });
 
-sequelize.sync({ force: false });
+sequelize.sync({ force: true });
 
 app.use(cors());
-app.use(express.json());
 app.set("sequelize", sequelize);
+app.use(express.json({ limit: "1000mb" }));
+app.use(express.urlencoded({ limit: "1000mb" }));
+app.use(bodyParser({ limit: "1000MB" }));
 
 consign().include("models").then("controllers").into(app);
 

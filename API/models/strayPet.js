@@ -20,12 +20,16 @@ module.exports = function (app) {
         allowNull: false,
       },
       date: {
-        type: DataTypes.DATEONLY,
+        type: DataTypes.STRING,
         allowNull: false,
       },
       description: {
         type: DataTypes.STRING,
         allowNull: false,
+      },
+      image: {
+        type: DataTypes.TEXT,
+        allowNull: true,
       },
     },
     {

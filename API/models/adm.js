@@ -49,7 +49,7 @@ module.exports = function (app) {
         allowNull: false,
       },
       cpf: {
-        type: DataTypes.NUMBER,
+        type: DataTypes.INTEGER,
         allowNull: false,
       },
     },

@@ -20,7 +20,7 @@ module.exports = function (app) {
         allowNull: false,
       },
       date: {
-        type: DataTypes.DATEONLY,
+        type: DataTypes.STRING,
         allowNull: false,
       },
       breed: {
@@ -36,7 +36,7 @@ module.exports = function (app) {
         allowNull: false,
       },
       image: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: true,
       },
     },
