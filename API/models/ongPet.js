@@ -11,12 +11,28 @@ module.exports = function (app) {
         primaryKey: true,
         allowNull: false,
       },
+      owner: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
       name: {
         type: DataTypes.STRING,
         allowNull: false,
       },
       CNPJ: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      phone: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      mail: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      image: {
+        type: DataTypes.TEXT,
         allowNull: false,
       },
     },

@@ -15,6 +15,10 @@ module.exports = function (app) {
         type: DataTypes.STRING,
         allowNull: false,
       },
+      nickname: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
       mail: {
         type: DataTypes.TEXT,
         allowNull: false,

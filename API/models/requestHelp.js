@@ -23,8 +23,16 @@ module.exports = function (app) {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      approved: {
-        type: DataTypes.BOOLEAN,
+      phone: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      mail: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      time: {
+        type: DataTypes.DATEONLY,
         allowNull: false,
       },
     },
