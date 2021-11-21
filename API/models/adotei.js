@@ -15,12 +15,24 @@ module.exports = function (app) {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      URL: {
+      description: {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      idUser: {
+      userName: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      image: {
+        type: DataTypes.TEXT,
+        allowNull: false,
+      },
+      userId: {
         type: DataTypes.INTEGER,
+        allowNull: false,
+      },
+      time: {
+        type: DataTypes.DATEONLY,
         allowNull: false,
       },
     },

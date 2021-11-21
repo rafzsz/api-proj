@@ -30,7 +30,7 @@ module.exports = function (app) {
 
   app.delete("/ongPet/:id", auth, async function (req, res) {
     const id = parseInt(req.params.id);
-    const partner = await Partner.findByPk(id);
+    const partner = await PartnerModel.findByPk(id);
     await partner.destroy();
     res.json({ status: "success" });
   });

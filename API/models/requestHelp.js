@@ -35,6 +35,10 @@ module.exports = function (app) {
         type: DataTypes.DATEONLY,
         allowNull: false,
       },
+      userId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
     },
     {
       timestamps: false,

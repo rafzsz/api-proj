@@ -39,6 +39,10 @@ module.exports = function (app) {
         type: DataTypes.TEXT,
         allowNull: true,
       },
+      userId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
     },
     {
       timestamps: false,
